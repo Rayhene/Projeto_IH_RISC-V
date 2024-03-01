@@ -27,6 +27,9 @@ module imm_Gen (
       7'b0110111: //U-TYPE LUI
         Imm_out = {inst_code[31:12] , 12'b0};
 
+      7'b0010011: /*I_TYPE*/
+        Imm_out = {inst_code[31] ? 20'hFFFFF : 20'b0, inst_code[31:20]};
+
       default: Imm_out = {32'b0};
 
     endcase
