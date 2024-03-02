@@ -15,10 +15,10 @@ module alu#(
         always_comb
         begin
             case(Operation)
-            4'b0000:        // AND
+            4'b0000: // AND
                     ALUResult = SrcA & SrcB;
             4'b0001: //OR
-		    ALUResult = SrcA ^ SrcB;
+		    ALUResult = SrcA | SrcB;
             4'b0010:        // ADD
                     ALUResult = $signed(SrcA) + $signed(SrcB);
             4'b0011: //SUB
